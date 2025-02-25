@@ -1,0 +1,728 @@
+{
+  "links": {
+    "csv": "https://test-server.com/api/orders/report.csv?filter%5Bscope%5D=pending",
+    "csv-all": "https://test-server.com/api/orders/report.csv?filter%5Bscope%5D=pending",
+    "xlsx": "https://test-server.com/api/orders/report.xlsx?filter%5Bscope%5D=pending",
+    "xlsx-all": "https://test-server.com/api/orders/report.xlsx?filter%5Bscope%5D=pending"
+  },
+  "data": [
+    {
+      "type": "orders",
+      "id": "K-4MBDVKC1D",
+      "attributes": {
+        "reference": "K-4MBDVKC1D",
+        "order-type": "forward",
+        "creation-date": "2025-01-30",
+        "market-direction": "buy",
+        "buy-currency": "GBP",
+        "sell-currency": "USD",
+        "amount-cents": 36700000,
+        "value-date": "2025-01-30",
+        "status": "new",
+        "actions": {
+          "edit": true,
+          "execute": true
+        }
+      },
+      "relationships": {
+        "bank-account": {
+          "data": {
+            "id": "2",
+            "type": "bank-accounts"
+          },
+          "attributes": {
+            "name": "Bank B",
+            "account-number": "987654321",
+            "swift-code": "BKB67890",
+            "address": "456 Market Ave, London, UK",
+            "phone": "+44 20 7946 0958",
+            "email": "support@bankb.co.uk"
+          }
+        }
+      }
+    },
+    {
+      "type": "orders",
+      "id": "KS-PJFHQ8P85",
+      "attributes": {
+        "reference": "KS-PJFHQ8P85",
+        "status": "new",
+        "order-type": "swap",
+        "creation-date": "2024-10-24",
+        "market-direction": "sell",
+        "buy-currency": "USD",
+        "sell-currency": "EUR",
+        "amount-cents": 47080000,
+        "value-date": "2024-11-20",
+        "actions": {
+          "delete": true,
+          "edit": true,
+          "execute": true
+        }
+      },
+      "relationships": {
+        "bank-account": {
+          "data": {
+            "id": "1",
+            "type": "bank-accounts"
+          },
+          "attributes": {
+            "name": "Bank A",
+            "account-number": "123456789",
+            "swift-code": "BKA12345",
+            "address": "123 Finance St, New York, NY, USA",
+            "phone": "+1 212-555-0101",
+            "email": "contact@banka.com"
+          }
+        }
+      }
+    },
+    {
+      "type": "orders",
+      "id": "KS-N5P78MJG8",
+      "attributes": {
+        "reference": "KS-N5P78MJG8",
+        "status": "new",
+        "order-type": "swap",
+        "creation-date": "2024-10-16",
+        "market-direction": "sell",
+        "buy-currency": "EUR",
+        "sell-currency": "GBP",
+        "amount-cents": 21700000,
+        "value-date": "2024-10-30",
+        "actions": {
+          "delete": true,
+          "edit": true,
+          "execute": true
+        }
+      },
+      "relationships": {
+        "bank-account": {
+          "data": {
+            "id": "2",
+            "type": "bank-accounts"
+          },
+          "attributes": {
+            "name": "Bank B",
+            "account-number": "987654321",
+            "swift-code": "BKB67890",
+            "address": "456 Market Ave, London, UK",
+            "phone": "+44 20 7946 0958",
+            "email": "support@bankb.co.uk"
+          }
+        }
+      }
+    },
+    {
+      "type": "orders",
+      "id": "KS-7KXR4Q1CB",
+      "attributes": {
+        "reference": "KS-7KXR4Q1CB",
+        "status": "failed",
+        "order-type": "swap",
+        "creation-date": "2024-10-08",
+        "market-direction": "buy",
+        "buy-currency": "EUR",
+        "sell-currency": "USD",
+        "amount-cents": 5668000,
+        "value-date": "2024-12-27",
+        "actions": {
+          "delete": true,
+          "retry": true,
+          "cancel": true
+        }
+      },
+      "relationships": {
+        "bank-account": {
+          "data": {
+            "id": "3",
+            "type": "bank-accounts"
+          },
+          "attributes": {
+            "name": "Bank C",
+            "account-number": "456789123",
+            "swift-code": "BKC13579",
+            "address": "789 Commerce Rd, Tokyo, Japan",
+            "phone": "+81 3-1234-5678",
+            "email": "info@bankc.jp"
+          }
+        }
+      }
+    },
+    {
+      "type": "orders",
+      "id": "KS-7G1TGWW4H",
+      "attributes": {
+        "reference": "KS-7G1TGWW4H",
+        "status": "failed",
+        "order-type": "swap",
+        "creation-date": "2024-09-04",
+        "market-direction": "buy",
+        "buy-currency": "GBP",
+        "sell-currency": "EUR",
+        "amount-cents": 13260090,
+        "value-date": "2024-09-18",
+        "actions": {
+          "delete": true,
+          "retry": true,
+          "cancel": true
+        }
+      },
+      "relationships": {
+        "bank-account": {
+          "data": {
+            "id": "2",
+            "type": "bank-accounts"
+          },
+          "attributes": {
+            "name": "Bank B",
+            "account-number": "987654321",
+            "swift-code": "BKB67890",
+            "address": "456 Market Ave, London, UK",
+            "phone": "+44 20 7946 0958",
+            "email": "support@bankb.co.uk"
+          }
+        }
+      }
+    },
+    {
+      "type": "orders",
+      "id": "K-TN8JDR1R4",
+      "attributes": {
+        "reference": "K-TN8JDR1R4",
+        "order-type": "forward",
+        "creation-date": "2024-09-04",
+        "market-direction": "buy",
+        "buy-currency": "USD",
+        "sell-currency": "EUR",
+        "amount-cents": 45576850,
+        "value-date": "2024-11-12",
+        "status": "new",
+        "actions": {
+          "edit": true,
+          "execute": true
+        }
+      },
+      "relationships": {
+        "bank-account": {
+          "data": {
+            "id": "1",
+            "type": "bank-accounts"
+          },
+          "attributes": {
+            "name": "Bank A",
+            "account-number": "123456789",
+            "swift-code": "BKA12345",
+            "address": "123 Finance St, New York, NY, USA",
+            "phone": "+1 212-555-0101",
+            "email": "contact@banka.com"
+          }
+        }
+      }
+    },
+    {
+      "type": "orders",
+      "id": "KS-9JYWR4T4K",
+      "attributes": {
+        "reference": "KS-9JYWR4T4K",
+        "status": "failed",
+        "order-type": "swap",
+        "creation-date": "2024-08-29",
+        "market-direction": "buy",
+        "buy-currency": "EUR",
+        "sell-currency": "USD",
+        "amount-cents": 344400,
+        "value-date": "2024-09-27",
+        "actions": {
+          "delete": true,
+          "retry": true,
+          "cancel": true
+        }
+      },
+      "relationships": {
+        "bank-account": {
+          "data": {
+            "id": "3",
+            "type": "bank-accounts"
+          },
+          "attributes": {
+            "name": "Bank C",
+            "account-number": "456789123",
+            "swift-code": "BKC13579",
+            "address": "789 Commerce Rd, Tokyo, Japan",
+            "phone": "+81 3-1234-5678",
+            "email": "info@bankc.jp"
+          }
+        }
+      }
+    },
+    {
+      "type": "orders",
+      "id": "KS-W6K4ZGSL2",
+      "attributes": {
+        "reference": "KS-W6K4ZGSL2",
+        "status": "failed",
+        "order-type": "swap",
+        "creation-date": "2024-08-29",
+        "market-direction": "buy",
+        "buy-currency": "EUR",
+        "sell-currency": "USD",
+        "amount-cents": 145900,
+        "value-date": "2024-09-27",
+        "actions": {
+          "delete": true,
+          "retry": true,
+          "cancel": true
+        }
+      },
+      "relationships": {
+        "bank-account": {
+          "data": {
+            "id": "2",
+            "type": "bank-accounts"
+          },
+          "attributes": {
+            "name": "Bank B",
+            "account-number": "987654321",
+            "swift-code": "BKB67890",
+            "address": "456 Market Ave, London, UK",
+            "phone": "+44 20 7946 0958",
+            "email": "support@bankb.co.uk"
+          }
+        }
+      }
+    },
+    {
+      "type": "orders",
+      "id": "KS-4YFP5ZFXW",
+      "attributes": {
+        "reference": "KS-4YFP5ZFXW",
+        "status": "failed",
+        "order-type": "swap",
+        "creation-date": "2024-08-27",
+        "market-direction": "buy",
+        "buy-currency": "USD",
+        "sell-currency": "EUR",
+        "amount-cents": 124400,
+        "value-date": "2024-09-06",
+        "actions": {
+          "delete": true,
+          "retry": true,
+          "cancel": true
+        }
+      },
+      "relationships": {
+        "bank-account": {
+          "data": {
+            "id": "2",
+            "type": "bank-accounts"
+          },
+          "attributes": {
+            "name": "Bank B",
+            "account-number": "987654321",
+            "swift-code": "BKB67890",
+            "address": "456 Market Ave, London, UK",
+            "phone": "+44 20 7946 0958",
+            "email": "support@bankb.co.uk"
+          }
+        }
+      }
+    },
+    {
+      "type": "orders",
+      "id": "KS-891WDQML8",
+      "attributes": {
+        "reference": "KS-891WDQML8",
+        "status": "failed",
+        "order-type": "swap",
+        "creation-date": "2024-07-31",
+        "market-direction": "buy",
+        "buy-currency": "EUR",
+        "sell-currency": "USD",
+        "amount-cents": 1000000,
+        "value-date": "2024-08-28",
+        "actions": {
+          "delete": true,
+          "retry": true,
+          "cancel": true
+        }
+      },
+      "relationships": {
+        "bank-account": {
+          "data": {
+            "id": "2",
+            "type": "bank-accounts"
+          },
+          "attributes": {
+            "name": "Bank B",
+            "account-number": "987654321",
+            "swift-code": "BKB67890",
+            "address": "456 Market Ave, London, UK",
+            "phone": "+44 20 7946 0958",
+            "email": "support@bankb.co.uk"
+          }
+        }
+      }
+    },
+    {
+      "type": "orders",
+      "id": "KS-C2XFDZ4GV",
+      "attributes": {
+        "reference": "KS-C2XFDZ4GV",
+        "status": "failed",
+        "order-type": "swap",
+        "creation-date": "2024-07-31",
+        "market-direction": "buy",
+        "buy-currency": "CHF",
+        "sell-currency": "PLN",
+        "amount-cents": 1860000,
+        "value-date": "2024-08-28",
+        "actions": {
+          "delete": true,
+          "retry": true,
+          "cancel": true
+        }
+      },
+      "relationships": {
+        "bank-account": {
+          "data": {
+            "id": "3",
+            "type": "bank-accounts"
+          },
+          "attributes": {
+            "name": "Bank C",
+            "account-number": "456789123",
+            "swift-code": "BKC13579",
+            "address": "789 Commerce Rd, Tokyo, Japan",
+            "phone": "+81 3-1234-5678",
+            "email": "info@bankc.jp"
+          }
+        }
+      }
+    },
+    {
+      "type": "orders",
+      "id": "KND-FLHBBZ2G",
+      "attributes": {
+        "reference": "KND-FLHBBZ2G",
+        "order-type": "ndf",
+        "creation-date": "2024-07-29",
+        "market-direction": "sell",
+        "buy-currency": "BRL",
+        "sell-currency": "SGD",
+        "amount-cents": 15050000,
+        "value-date": "2024-08-14",
+        "status": "failed",
+        "actions": {
+          "delete": true,
+          "execute": true,
+          "retry": true,
+          "cancel": true
+        }
+      },
+      "relationships": {
+        "bank-account": {
+          "data": {
+            "id": "1",
+            "type": "bank-accounts"
+          },
+          "attributes": {
+            "name": "Bank A",
+            "account-number": "123456789",
+            "swift-code": "BKA12345",
+            "address": "123 Finance St, New York, NY, USA",
+            "phone": "+1 212-555-0101",
+            "email": "contact@banka.com"
+          }
+        }
+      }
+    },
+    {
+      "type": "orders",
+      "id": "KS-5MHBJMHVH",
+      "attributes": {
+        "reference": "KS-5MHBJMHVH",
+        "status": "new",
+        "order-type": "swap",
+        "creation-date": "2024-07-29",
+        "market-direction": "sell",
+        "buy-currency": "EUR",
+        "sell-currency": "USD",
+        "amount-cents": 1700000,
+        "value-date": "2024-10-03",
+        "actions": {
+          "delete": true,
+          "edit": true,
+          "execute": true
+        }
+      },
+      "relationships": {
+        "bank-account": {
+          "data": {
+            "id": "1",
+            "type": "bank-accounts"
+          },
+          "attributes": {
+            "name": "Bank A",
+            "account-number": "123456789",
+            "swift-code": "BKA12345",
+            "address": "123 Finance St, New York, NY, USA",
+            "phone": "+1 212-555-0101",
+            "email": "contact@banka.com"
+          }
+        }
+      }
+    },
+    {
+      "type": "orders",
+      "id": "KS-L988VG435",
+      "attributes": {
+        "reference": "KS-L988VG435",
+        "status": "failed",
+        "order-type": "swap",
+        "creation-date": "2024-07-24",
+        "market-direction": "buy",
+        "buy-currency": "USD",
+        "sell-currency": "MXN",
+        "amount-cents": 33000000,
+        "value-date": "2024-07-31",
+        "actions": {
+          "delete": true,
+          "retry": true,
+          "cancel": true
+        }
+      },
+      "relationships": {
+        "bank-account": {
+          "data": {
+            "id": "1",
+            "type": "bank-accounts"
+          },
+          "attributes": {
+            "name": "Bank A",
+            "account-number": "123456789",
+            "swift-code": "BKA12345",
+            "address": "123 Finance St, New York, NY, USA",
+            "phone": "+1 212-555-0101",
+            "email": "contact@banka.com"
+          }
+        }
+      }
+    },
+    {
+      "type": "orders",
+      "id": "KS-FQ54M2DGC",
+      "attributes": {
+        "reference": "KS-FQ54M2DGC",
+        "status": "new",
+        "order-type": "swap",
+        "creation-date": "2024-07-18",
+        "market-direction": "sell",
+        "buy-currency": "EUR",
+        "sell-currency": "USD",
+        "amount-cents": 14300000,
+        "value-date": "2024-08-01",
+        "actions": {
+          "delete": true,
+          "edit": true,
+          "execute": true
+        }
+      },
+      "relationships": {
+        "bank-account": {
+          "data": {
+            "id": "3",
+            "type": "bank-accounts"
+          },
+          "attributes": {
+            "name": "Bank C",
+            "account-number": "456789123",
+            "swift-code": "BKC13579",
+            "address": "789 Commerce Rd, Tokyo, Japan",
+            "phone": "+81 3-1234-5678",
+            "email": "info@bankc.jp"
+          }
+        }
+      }
+    },
+    {
+      "type": "orders",
+      "id": "K-3V54KD193",
+      "attributes": {
+        "reference": "K-3V54KD193",
+        "order-type": "forward",
+        "creation-date": "2024-07-12",
+        "market-direction": "buy",
+        "buy-currency": "EUR",
+        "sell-currency": "USD",
+        "amount-cents": 600000,
+        "value-date": "2024-07-12",
+        "status": "awaiting_response",
+        "actions": {
+          "execute": true
+        }
+      },
+      "relationships": {
+        "bank-account": {
+          "data": {
+            "id": "1",
+            "type": "bank-accounts"
+          },
+          "attributes": {
+            "name": "Bank A",
+            "account-number": "123456789",
+            "swift-code": "BKA12345",
+            "address": "123 Finance St, New York, NY, USA",
+            "phone": "+1 212-555-0101",
+            "email": "contact@banka.com"
+          }
+        }
+      }
+    },
+    {
+      "type": "orders",
+      "id": "K-T3GZH5MRR",
+      "attributes": {
+        "reference": "K-T3GZH5MRR",
+        "order-type": "forward",
+        "creation-date": "2024-07-12",
+        "market-direction": "buy",
+        "buy-currency": "USD",
+        "sell-currency": "EUR",
+        "amount-cents": 1890050,
+        "value-date": "2024-07-12",
+        "status": "awaiting_response",
+        "actions": {
+          "execute": true
+        }
+      },
+      "relationships": {
+        "bank-account": {
+          "data": {
+            "id": "2",
+            "type": "bank-accounts"
+          },
+          "attributes": {
+            "name": "Bank B",
+            "account-number": "987654321",
+            "swift-code": "BKB67890",
+            "address": "456 Market Ave, London, UK",
+            "phone": "+44 20 7946 0958",
+            "email": "support@bankb.co.uk"
+          }
+        }
+      }
+    },
+    {
+      "type": "orders",
+      "id": "K-TJXGLQKY3",
+      "attributes": {
+        "reference": "K-TJXGLQKY3",
+        "order-type": "forward",
+        "creation-date": "2024-07-12",
+        "market-direction": "buy",
+        "buy-currency": "EUR",
+        "sell-currency": "CHF",
+        "amount-cents": 4310078,
+        "value-date": "2024-07-12",
+        "status": "awaiting_response",
+        "actions": {
+          "execute": true
+        }
+      },
+      "relationships": {
+        "bank-account": {
+          "data": {
+            "id": "3",
+            "type": "bank-accounts"
+          },
+          "attributes": {
+            "name": "Bank C",
+            "account-number": "456789123",
+            "swift-code": "BKC13579",
+            "address": "789 Commerce Rd, Tokyo, Japan",
+            "phone": "+81 3-1234-5678",
+            "email": "info@bankc.jp"
+          }
+        }
+      }
+    },
+    {
+      "type": "orders",
+      "id": "K-GRP3X68LQ",
+      "attributes": {
+        "reference": "K-GRP3X68LQ",
+        "order-type": "forward",
+        "creation-date": "2024-07-11",
+        "market-direction": "buy",
+        "buy-currency": "USD",
+        "sell-currency": "EUR",
+        "amount-cents": 100000,
+        "value-date": "2024-07-11",
+        "status": "awaiting_response",
+        "actions": {
+          "execute": true
+        }
+      },
+      "relationships": {
+        "bank-account": {
+          "data": {
+            "id": "2",
+            "type": "bank-accounts"
+          },
+          "attributes": {
+            "name": "Bank B",
+            "account-number": "987654321",
+            "swift-code": "BKB67890",
+            "address": "456 Market Ave, London, UK",
+            "phone": "+44 20 7946 0958",
+            "email": "support@bankb.co.uk"
+          }
+        }
+      }
+    },
+    {
+      "type": "orders",
+      "id": "K-D6J2KBHV8",
+      "attributes": {
+        "reference": "K-D6J2KBHV8",
+        "order-type": "forward",
+        "creation-date": "2024-07-11",
+        "market-direction": "buy",
+        "buy-currency": "PLN",
+        "sell-currency": "USD",
+        "amount-cents": 550897,
+        "value-date": "2024-07-11",
+        "status": "manual_check_needed",
+        "actions": {
+          "execute": true,
+          "cancel": true
+        }
+      },
+      "relationships": {
+        "bank-account": {
+          "data": {
+            "id": "3",
+            "type": "bank-accounts"
+          },
+          "attributes": {
+            "name": "Bank C",
+            "account-number": "456789123",
+            "swift-code": "BKC13579",
+            "address": "789 Commerce Rd, Tokyo, Japan",
+            "phone": "+81 3-1234-5678",
+            "email": "info@bankc.jp"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "current-page": 1,
+    "per-page": 20,
+    "offset": 0,
+    "total-entries": 304,
+    "total-records": 304,
+    "total-pages": 16
+  }
+}
