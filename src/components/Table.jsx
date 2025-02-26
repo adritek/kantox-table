@@ -26,17 +26,19 @@ export default function Table() {
   let content;
 
   if (isLoading) {
-    content = "📊 Loading orders 📊";
+    content = <p className="center">📊 Loading orders 📊</p>;
   }
 
   if (tableData.length) {
-    console.log("Table data", tableData);
     content = tableData.map((item) => (
       <tr key={item.id}>
         <td>{item.attributes.reference}</td>
         <td>{item.attributes["order-type"]}</td>
         <td>{item.attributes["creation-date"]}</td>
-        <td>{item.attributes["market-direction"]}</td>
+        <td>
+          {item.attributes["market-direction"]}
+          {item.attributes["market-direction"] === "buy" ? " 📈" : " 📉"}
+        </td>
       </tr>
     ));
   }

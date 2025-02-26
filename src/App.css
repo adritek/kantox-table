@@ -75,3 +75,16 @@ tbody tr:nth-child(odd) {
 tbody tr:hover td {
   background-color: light-dark(rgba(240 253 244 / 1), rgba(240 253 244 / 0.35));
 }
+
+@media (max-width: 600px) {
+  tbody tr:nth-child(odd) {
+    background-color: white;
+  }
+  thead tr th,
+  tbody tr td {
+    border: none;
+  }
+  tbody tr {
+    border: 1px solid #ccc;
+  }
+}
