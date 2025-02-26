@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 
 export default function Table() {
   const [tableData, setTableData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
     async function getData() {
+      setIsLoading(true);
       try {
         const response = await fetch("/src/assets/data.json");
         if (!response.ok) {
@@ -15,11 +18,17 @@ export default function Table() {
       } catch (error) {
         console.error(error);
       }
+      setIsLoading(false);
     }
 
     getData();
   }, []);
   let content;
+
+  if (isLoading) {
+    content = "📊 Loading orders 📊";
+  }
+
   if (tableData.length) {
     console.log("Table data", tableData);
     content = tableData.map((item) => (
