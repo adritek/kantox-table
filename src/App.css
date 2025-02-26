@@ -1,6 +1,6 @@
 body {
   height: 100vh;
-  background-color: #ead2ac;
+  /* background-color: #ead2ac; */
 }
 
 #root {
@@ -52,7 +52,26 @@ nav ul li:first-child {
   border-right: 2px solid whitesmoke;
 }
 
+main {
+  height: 100vh;
+}
+
 footer {
   position: absolute;
   bottom: 0;
+  background-color: #4281a4;
+  width: 90%;
+  /* for now */
+}
+
+/* table stuff */
+tbody tr td {
+  border: 1px solid #ccc;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: light-dark(rgba(0 0 0 / 0.05), rgba(255 255 255 / 0.1));
+}
+tbody tr:hover td {
+  background-color: light-dark(rgba(240 253 244 / 1), rgba(240 253 244 / 0.35));
 }

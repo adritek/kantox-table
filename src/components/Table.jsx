@@ -1,27 +1,36 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 export default function Table() {
-  const [respData, setRespData] = useState();
-  // react-query in here, replace useEffect
+  const [tableData, setTableData] = useState([]);
   useEffect(() => {
-    //reference this as a util function for react-query
     async function getData() {
       try {
-        const response = await fetch('data.json');
+        const response = await fetch("/src/assets/data.json");
         if (!response.ok) {
           throw new Error("Couldn't fetch data");
         }
         const { data } = await response.json();
-        setRespData(data);
+        setTableData(data);
         console.log(data);
       } catch (error) {
         console.error(error);
       }
     }
 
-    return getData();
+    getData();
   }, []);
-
+  let content;
+  if (tableData.length) {
+    console.log("Table data", tableData);
+    content = tableData.map((item) => (
+      <tr key={item.id}>
+        <td>{item.attributes.reference}</td>
+        <td>{item.attributes["order-type"]}</td>
+        <td>{item.attributes["creation-date"]}</td>
+        <td>{item.attributes["market-direction"]}</td>
+      </tr>
+    ));
+  }
   return (
     <>
       <table>
@@ -33,13 +42,7 @@ export default function Table() {
             <th>Market Direction</th>
           </tr>
         </thead>
-        <tbody>
-          {respData.map((item) => (
-            <tr key={item.id}>
-              <td>{item.attributes.reference}</td>
-            </tr>
-          ))}
-        </tbody>
+        <tbody>{content}</tbody>
       </table>
     </>
   );
