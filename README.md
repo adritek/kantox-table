@@ -27,19 +27,16 @@ npm run dev
 - [react-query](https://tanstack.com/) - Data fetching/caching
 - (future?) [tailwindcss](https://tailwindcss.com/) - CSS.classes.all.day.every.day
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
-
 ## Authors
 
 **Adrian Rogers**
 
 ## Acknowledgments
 
-- Hat tip
+Hat tip
+
 - **Billie Thompson** - This awesome [README template](https://gist.github.com/PurpleBooth/b24679402957c63ec426) - [PurpleBooth](https://github.com/PurpleBooth)
+
+### Contribute to this README
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
