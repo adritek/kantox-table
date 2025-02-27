@@ -76,6 +76,10 @@ tbody tr:hover td {
   background-color: light-dark(rgba(240 253 244 / 1), rgba(240 253 244 / 0.35));
 }
 
+.highlight {
+  background-color: lightgoldenrodyellow;
+}
+
 @media (max-width: 600px) {
   tbody tr:nth-child(odd) {
     background-color: white;
