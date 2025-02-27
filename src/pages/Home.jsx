@@ -16,10 +16,7 @@ export default function Home() {
           -React Router DOM - to build out the content and error pages (usage is
           v6)
         </li>
-        <li>
-          -COMING SOON: React Query or Tanstack - it will grab the data (cache
-          it, or refetch bts)
-        </li>
+        <li>-React Query - it will grab the data (cache it, or refetch bts)</li>
         <li>
           -Vanilla CSS - it&aposs a little SPA - I like working with it, loading
           a whole library then adding all those classes (Tailwind) just seems
