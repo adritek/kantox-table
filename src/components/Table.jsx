@@ -1,36 +1,26 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { getData } from "/src/utils/fetch.js";
 
 export default function Table() {
-  const [tableData, setTableData] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const { data, isLoading, isError, error } = useQuery({
+    queryKey: ["apiEvent"],
+    queryFn: getData,
+  });
 
-  useEffect(() => {
-    async function getData() {
-      setIsLoading(true);
-      try {
-        const response = await fetch("/src/assets/data.json");
-        if (!response.ok) {
-          throw new Error("Couldn't fetch data");
-        }
-        const { data } = await response.json();
-        setTableData(data);
-        console.log(data);
-      } catch (error) {
-        console.error(error);
-      }
-      setIsLoading(false);
-    }
+  console.log(data);
 
-    getData();
-  }, []);
   let content;
+  let warnings;
 
   if (isLoading) {
-    content = <p className="center">📊 Loading orders 📊</p>;
+    warnings = <p className="center">📊 Loading orders 📊</p>;
+  }
+  if (isError) {
+    warnings = { error }; //todo better errors
   }
 
-  if (tableData.length) {
-    content = tableData.map((item) => (
+  if (data) {
+    content = data.map((item) => (
       <tr key={item.id}>
         <td>{item.attributes.reference}</td>
         <td>{item.attributes["order-type"]}</td>
@@ -44,6 +34,7 @@ export default function Table() {
   }
   return (
     <>
+      {warnings}
       <table>
         <thead>
           <tr>

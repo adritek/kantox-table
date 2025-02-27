@@ -12,7 +12,10 @@ export default function Home() {
       <p>I went with:</p>
       <ul>
         <li>-React and Vite - it is the defaco now-a-days</li>
-        <li>-React Router DOM - to build out the content and error pages</li>
+        <li>
+          -React Router DOM - to build out the content and error pages (usage is
+          v6)
+        </li>
         <li>
           -COMING SOON: React Query or Tanstack - it will grab the data (cache
           it, or refetch bts)
