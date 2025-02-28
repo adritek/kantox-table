@@ -45,7 +45,7 @@ export default function Table() {
   return (
     <>
       {warnings}
-      <table>
+      <table className="border-separate border border-gray-400">
         <thead>
           <tr>
             <th>Reference</th>

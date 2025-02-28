@@ -1,15 +1,15 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link } from 'react-router-dom';
 
-import MainNav from "../components/MainNav";
+import MainNav from '../components/MainNav';
 
 export default function RootNav() {
   return (
-    <div id="container">
+    <div id="container" className="flex flex-col h-screen">
       <MainNav />
-      <main>
+      <main className="mx-auto w-full max-w-9/10 pt-4 text-gray-600 grow">
         <Outlet />
       </main>
-      <footer>
+      <footer className="w-full bg-gray-500 text-gray-400">
         <Link to="/error">Lil dude</Link>
       </footer>
     </div>

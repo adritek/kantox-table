@@ -4,8 +4,11 @@ Given the mock returned data build a table
 
 ## Special note for grading
 
-Hello and welcome - If you're looking for my submitted solution, please check [this branch](https://github.com/adritek/kantox-table/tree/got-to-here-test).  
-I'm continuing on /main if you want to see how things turn out.
+Hello and welcome - If you're looking for my submitted solution, please check [this branch](https://github.com/adritek/kantox-table/tree/got-to-here-test).
+
+I'm continuing on /main if you want to see how things turn out.  
+/main is pretty stable and feature branches will be merged into it via gitflow.  
+Like [integrating Tailwinds](https://github.com/adritek/kantox-table/tree/feature-integrate-tailwinds)
 
 ## Getting Started
 
