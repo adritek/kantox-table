@@ -1,0 +1,31 @@
+main {
+  margin: 0 auto;
+}
+
+th,
+td {
+  padding: 1em;
+  border: 1px solid #d1d5dc;
+}
+
+th {
+  white-space: wrap;
+  background-color: #ccc;
+  border: 1px solid black;
+  color: black;
+}
+
+td {
+  white-space: nowrap;
+}
+
+table tr:nth-child(even) {
+  background: #f0f0f0;
+}
+table tr:nth-child(odd) {
+  background: #fff;
+}
+
+.highlight {
+  background-color: cornsilk;
+}

@@ -3,7 +3,7 @@ export function currencyConverter(dir, amountCents, buyCurrency, sellCurrency) {
   if (dir === 'buy') {
     return (
       <>
-        <td className="highlight">
+        <td className="border border-gray-300 highlight">
           {`${amount} `}
           <strong>{sellCurrency}</strong>
         </td>{' '}
@@ -23,8 +23,8 @@ export function currencyConverter(dir, amountCents, buyCurrency, sellCurrency) {
   }
   return (
     <>
-      <td></td>
-      <td></td>
+      <td>No data</td>
+      <td>No data</td>
     </>
   );
 }

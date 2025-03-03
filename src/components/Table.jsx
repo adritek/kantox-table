@@ -24,8 +24,8 @@ export default function Table() {
   if (data) {
     content = data.map((item) => (
       <tr key={item.id}>
-        <td>{item.attributes.reference}</td>
         <td>{item.attributes['order-type']}</td>
+        <td>{item.attributes.reference}</td>
         <td>{item.attributes['creation-date']}</td>
         <td>
           {item.attributes['market-direction']}
@@ -37,15 +37,15 @@ export default function Table() {
           item.attributes['buy-currency'],
           item.attributes['sell-currency']
         )}
-        <td>{item.attributes['value-date']}</td>
-        <td>{item.attributes.status}</td>
+        <td className="border border-gray-300">{item.attributes['value-date']}</td>
+        <td className="border border-gray-300">{item.attributes.status}</td>
       </tr>
     ));
   }
   return (
     <>
       {warnings}
-      <table className="border-separate border border-gray-400">
+      <table className="mx-auto border-collapse border border-gray-400 ">
         <thead>
           <tr>
             <th>Reference</th>

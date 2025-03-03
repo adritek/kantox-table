@@ -4,7 +4,7 @@ export default function MainNav() {
   return (
     <>
       <header className="bg-gray-700 text-yellow-50 p-5">
-        <nav className="max-w-6xl mx-auto flex items-center">
+        <nav className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="text-xl font-bold">Adrian Rogers</div>
           <ul className="flex space-x-6 ml-8">
             <li>
