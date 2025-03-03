@@ -8,7 +8,7 @@ Hello and welcome - If you're looking for my submitted solution, please check [t
 
 I'm continuing on /main if you want to see how things turn out.  
 /main is pretty stable and feature branches will be merged into it via gitflow.  
-Like [integrating Tailwinds](https://github.com/adritek/kantox-table/tree/feature-integrate-tailwinds)
+Check out branch [integrating Tailwinds](https://github.com/adritek/kantox-table/tree/feature-integrate-tailwinds) to see one possible integration type.
 
 ## Getting Started
 
@@ -28,7 +28,7 @@ npm run dev
 - [React/Vite](https://vite.dev/) - The web framework used
 - [react-router-dom](https://reactrouter.com/home) - Make those nice SPA pages
 - [react-query](https://tanstack.com/) - Data fetching/caching
-- (future?) [tailwindcss](https://tailwindcss.com/) - CSS.classes.all.day.every.day
+- [tailwindcss](https://tailwindcss.com/) - CSS.classes.all.day.every.day
 
 ## Authors
 
