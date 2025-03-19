@@ -1,6 +1,6 @@
 # Kantox technical exercise
 
-Make 2 pages: 1st - how you made it, 2nd - Given the mock returned data build a table
+Make 2 pages: 1st - how you made it, 2nd page - Given the mock returned data build a table
 
 ## Special note for grading
 
