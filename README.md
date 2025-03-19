@@ -1,14 +1,13 @@
 # Kantox technical exercise
 
-Given the mock returned data build a table
+Make 2 pages: 1st - how you made it, 2nd - Given the mock returned data build a table
 
 ## Special note for grading
 
 Hello and welcome - If you're looking for my submitted solution, please check [this branch](https://github.com/adritek/kantox-table/tree/got-to-here-test).
 
 I'm continuing on /main if you want to see how things turn out.  
-/main is pretty stable and feature branches will be merged into it via gitflow.  
-Check out branch [integrating Tailwinds](https://github.com/adritek/kantox-table/tree/feature-integrate-tailwinds) to see one possible integration type.
+/main is pretty stable and feature branches will be merged into it via gitflow.
 
 ## Getting Started
 
@@ -26,7 +25,7 @@ npm run dev
 ## Built With
 
 - [React/Vite](https://vite.dev/) - The web framework used
-- [react-router-dom](https://reactrouter.com/home) - Make those nice SPA pages
+- [react-router](https://reactrouter.com/home) - Make those nice SPA pages
 - [react-query](https://tanstack.com/) - Data fetching/caching
 - [tailwindcss](https://tailwindcss.com/) - CSS.classes.all.day.every.day
 

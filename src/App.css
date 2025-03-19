@@ -4,7 +4,7 @@ main {
 
 th,
 td {
-  padding: 1em;
+  padding: 1rem;
   border: 1px solid #d1d5dc;
 }
 
@@ -13,10 +13,18 @@ th {
   background-color: #ccc;
   border: 1px solid black;
   color: black;
+  letter-spacing: 2px;
 }
 
 td {
   white-space: nowrap;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+tbody td,
+thead {
+  text-align: left;
 }
 
 table tr:nth-child(even) {
@@ -28,4 +36,70 @@ table tr:nth-child(odd) {
 
 .highlight {
   background-color: cornsilk;
+}
+
+caption {
+  padding: 20px;
+  font-style: italic;
+  font-weight: 700;
+  text-transform: uppercase;
+  caption-side: top;
+  color: #666;
+  text-align: right;
+  letter-spacing: 1px;
+}
+
+/* Responsive Tables */
+
+[role='region'][aria-labelledby][tabindex] {
+  overflow-x: scroll;
+  max-width: 100%;
+  border: 0.1em solid #d6d6d6;
+}
+
+[role='region'][aria-labelledby][tabindex]:focus {
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+  outline: 0.1em solid rgba(0, 0, 0, 0.1);
+}
+
+[role='region'][aria-labelledby][tabindex] table {
+  margin: 0;
+  border: none;
+}
+
+@media (width < 850px) {
+  caption {
+    text-align: left;
+  }
+}
+
+@media (max-width: 650px) {
+  td {
+    display: grid;
+    grid-template-columns: 16ch auto;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+
+  td:first-child {
+    padding-top: 2rem;
+  }
+
+  td:last-child {
+    padding-bottom: 2rem;
+  }
+
+  td::before {
+    content: attr(data-cell) ': ';
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+
+  th {
+    display: none;
+  }
+
+  caption {
+    text-align: left;
+  }
 }

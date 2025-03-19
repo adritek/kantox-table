@@ -1,37 +1,17 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { Outlet, Link } from 'react-router';
 
-import Error from "./pages/Error";
-import Home from "./pages/Home";
-import Table from "./components/Table";
-import RootNav from "./pages/RootNav";
+import MainNav from './components/MainNav';
 
-import "./App.css";
+import './App.css';
 
 export default function App() {
-  const queryClient = new QueryClient();
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <RootNav />,
-      errorElement: <Error />,
-
-      children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path: "/orders",
-          element: <Table />,
-        },
-      ],
-    },
-  ]);
-
   return (
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <div id="container" className="flex flex-col h-screen">
+      <MainNav />
+      <main>{<Outlet />}</main>
+      <footer className="w-full bg-gray-500 text-gray-400">
+        <Link to="/error">Lil dude</Link>
+      </footer>
+    </div>
   );
 }

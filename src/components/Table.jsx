@@ -24,10 +24,10 @@ export default function Table() {
   if (data) {
     content = data.map((item) => (
       <tr key={item.id}>
-        <td>{item.attributes['order-type']}</td>
-        <td>{item.attributes.reference}</td>
-        <td>{item.attributes['creation-date']}</td>
-        <td>
+        <td data-cell="order type">{item.attributes['order-type']}</td>
+        <td data-cell="reference">{item.attributes.reference}</td>
+        <td data-cell="creation date">{item.attributes['creation-date']}</td>
+        <td data-cell="market direction">
           {item.attributes['market-direction']}
           {item.attributes['market-direction'] === 'buy' ? ' 📈' : ' 📉'}
         </td>
@@ -37,29 +37,39 @@ export default function Table() {
           item.attributes['buy-currency'],
           item.attributes['sell-currency']
         )}
-        <td className="border border-gray-300">{item.attributes['value-date']}</td>
-        <td className="border border-gray-300">{item.attributes.status}</td>
+        <td data-cell="value date" className="border border-gray-300">
+          {item.attributes['value-date']}
+        </td>
+        <td data-cell="status" className="border border-gray-300">
+          {item.attributes.status}
+        </td>
       </tr>
     ));
   }
   return (
-    <>
+    <div
+      id="table-container"
+      role="region"
+      aria-labelledby="OrdersTable01"
+      tabIndex="0"
+    >
       {warnings}
-      <table className="mx-auto border-collapse border border-gray-400 ">
+      <table className="border-collapse border border-gray-400">
+        <caption id="OrdersTable01">Trading data</caption>
         <thead>
           <tr>
-            <th>Reference</th>
-            <th>Order Type</th>
-            <th>Creation Date</th>
-            <th>Market Direction</th>
-            <th>Buy</th>
-            <th>Sell</th>
-            <th>Value Date</th>
-            <th>Status</th>
+            <th scope="col">Reference</th>
+            <th scope="col">Order Type</th>
+            <th scope="col">Creation Date</th>
+            <th scope="col">Market Direction</th>
+            <th scope="col">Buy</th>
+            <th scope="col">Sell</th>
+            <th scope="col">Value Date</th>
+            <th scope="col">Status</th>
           </tr>
         </thead>
         <tbody>{content}</tbody>
       </table>
-    </>
+    </div>
   );
 }
