@@ -2,7 +2,7 @@ import { Outlet, Link } from 'react-router';
 
 import MainNav from './components/MainNav';
 
-import './App.css';
+// import './App.css';
 
 export default function App() {
   return (

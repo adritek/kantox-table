@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { getData } from '/src/utils/fetch.js';
 
-import { currencyConverter } from '../utils/currencyConverter';
+// import { currencyConverter } from '../utils/currencyConverter';
 
 export default function Table() {
   const { data, isLoading, isError, error } = useQuery({
@@ -31,16 +31,20 @@ export default function Table() {
           {item.attributes['market-direction']}
           {item.attributes['market-direction'] === 'buy' ? ' 📈' : ' 📉'}
         </td>
-        {currencyConverter(
-          item.attributes['market-direction'],
-          item.attributes['amount-cents'],
-          item.attributes['buy-currency'],
-          item.attributes['sell-currency']
-        )}
-        <td data-cell="value date" className="border border-gray-300">
+        <td data-cell="buy">
+          {item.attributes['market-direction'] === 'buy'
+            ? `${item.attributes['amount-cents']} ${item.attributes['buy-currency']}`
+            : `${item.attributes['buy-currency']}`}
+        </td>
+        <td data-cell="sell">
+          {item.attributes['market-direction'] !== 'buy'
+            ? `${item.attributes['amount-cents']} ${item.attributes['sell-currency']}`
+            : `${item.attributes['sell-currency']}`}
+        </td>
+        <td data-cell="value date" className="">
           {item.attributes['value-date']}
         </td>
-        <td data-cell="status" className="border border-gray-300">
+        <td data-cell="status" className="">
           {item.attributes.status}
         </td>
       </tr>
@@ -54,18 +58,58 @@ export default function Table() {
       tabIndex="0"
     >
       {warnings}
-      <table className="border-collapse border border-gray-400">
+      <table className="w-full border-collapse">
         <caption id="OrdersTable01">Trading data</caption>
-        <thead>
+        <thead className="bg-gray-50 border-b-2 border-gray-200">
           <tr>
-            <th scope="col">Reference</th>
-            <th scope="col">Order Type</th>
-            <th scope="col">Creation Date</th>
-            <th scope="col">Market Direction</th>
-            <th scope="col">Buy</th>
-            <th scope="col">Sell</th>
-            <th scope="col">Value Date</th>
-            <th scope="col">Status</th>
+            <th
+              className="p-4 text-small font-semibold tracking-wide text-left"
+              scope="col"
+            >
+              Reference
+            </th>
+            <th
+              className="p-4 text-small font-semibold tracking-wide text-left"
+              scope="col"
+            >
+              Order Type
+            </th>
+            <th
+              className="p-4 text-small font-semibold tracking-wide text-left"
+              scope="col"
+            >
+              Creation Date
+            </th>
+            <th
+              className="p-4 text-small font-semibold tracking-wide text-left"
+              scope="col"
+            >
+              Market Direction
+            </th>
+            <th
+              className="p-4 text-small font-semibold tracking-wide text-left"
+              scope="col"
+            >
+              Buy
+            </th>
+            <th
+              className="p-4 font-semibold text-small tracking-wide text-left"
+              scope="col"
+            >
+              Sell
+            </th>
+            <th
+              className="p-4 text-small font-semibold tracking-wide text-left"
+              scope="col"
+            >
+              Value Date
+            </th>
+            <th
+              className="p-4 text-small font-semibold tracking-wide text-left"
+              scope="col"
+            >
+              Status
+            </th>
           </tr>
         </thead>
         <tbody>{content}</tbody>
