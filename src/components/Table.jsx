@@ -23,9 +23,13 @@ export default function Table() {
 
   if (data) {
     content = data.map((item) => (
-      <tr key={item.id}>
+      <tr key={item.id} className="even:bg-gray-100 odd:bg-white">
+        <td data-cell="reference">
+          <a href="#" className="font-bold text-blue-500 hover:underline">
+            {item.attributes.reference}
+          </a>
+        </td>
         <td data-cell="order type">{item.attributes['order-type']}</td>
-        <td data-cell="reference">{item.attributes.reference}</td>
         <td data-cell="creation date">{item.attributes['creation-date']}</td>
         <td data-cell="market direction">
           {item.attributes['market-direction']}
@@ -44,8 +48,20 @@ export default function Table() {
         <td data-cell="value date" className="">
           {item.attributes['value-date']}
         </td>
-        <td data-cell="status" className="">
-          {item.attributes.status}
+        <td data-cell="status">
+          <span
+            className={`p-1.5 text-xs font-medium uppercase tracking-wider text-yellow-800 rounded-xl 
+            ${item.attributes.status === 'new' ? 'bg-green-500/15' : ''} 
+            ${item.attributes.status === 'failed' ? 'bg-red-500/15' : ''} 
+            ${
+              item.attributes.status !== 'new' &&
+              item.attributes.status !== 'failed'
+                ? 'bg-yellow-500/15 text-yellow-800'
+                : ''
+            }`}
+          >
+            {item.attributes.status}
+          </span>
         </td>
       </tr>
     ));
