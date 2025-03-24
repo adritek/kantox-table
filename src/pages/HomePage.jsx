@@ -9,13 +9,14 @@ export default function Home() {
       </ul>
       <p>I went with:</p>
       <ul className="list-disc list-inside">
-        <li>React and Vite - it is the defaco now-a-days</li>
+        <li>React and Vite</li>
         <li>
           React Router DOM - to build out the content and error pages. Updated to v7
         </li>
         <li>React Query - it will grab the data (cache it, or refetch)</li>
-        <li>Tailwind CSS - because it&#39;s the flavour of the month</li>
+        <li>Tailwind CSS - because Tailwind</li>
         <li>Responsive tables (block level), and ARIA approved!</li>
+        <li>Future - migrate to TypeScript</li>
       </ul>
     </>
   );

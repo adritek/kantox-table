@@ -24,33 +24,40 @@ export default function Table() {
   if (data) {
     content = data.map((item) => (
       <tr key={item.id} className="even:bg-gray-100 odd:bg-white">
-        <td data-cell="reference">
+        <td data-cell="reference" className="p-3 text-sm text-gray-700">
           <a href="#" className="font-bold text-blue-500 hover:underline">
             {item.attributes.reference}
           </a>
         </td>
-        <td data-cell="order type">{item.attributes['order-type']}</td>
-        <td data-cell="creation date">{item.attributes['creation-date']}</td>
-        <td data-cell="market direction">
+        <td data-cell="order type" className="p-3 text-sm text-gray-700 capitalize">
+          {item.attributes['order-type']}
+        </td>
+        <td data-cell="creation date" className="p-3 text-sm text-gray-700">
+          {item.attributes['creation-date']}
+        </td>
+        <td
+          data-cell="market direction"
+          className="p-3 text-sm text-gray-700 capitalize"
+        >
           {item.attributes['market-direction']}
           {item.attributes['market-direction'] === 'buy' ? ' 📈' : ' 📉'}
         </td>
-        <td data-cell="buy">
+        <td data-cell="buy" className="p-3 text-sm text-gray-700">
           {item.attributes['market-direction'] === 'buy'
             ? `${item.attributes['amount-cents']} ${item.attributes['buy-currency']}`
             : `${item.attributes['buy-currency']}`}
         </td>
-        <td data-cell="sell">
+        <td data-cell="sell" className="p-3 text-sm text-gray-700">
           {item.attributes['market-direction'] !== 'buy'
             ? `${item.attributes['amount-cents']} ${item.attributes['sell-currency']}`
             : `${item.attributes['sell-currency']}`}
         </td>
-        <td data-cell="value date" className="">
+        <td data-cell="value date" className="p-3 text-sm text-gray-700">
           {item.attributes['value-date']}
         </td>
         <td data-cell="status">
           <span
-            className={`p-1.5 text-xs font-medium uppercase tracking-wider text-yellow-800 rounded-xl 
+            className={`p-1.5 text-xs font-medium uppercase tracking-wider text-yellow-800 rounded-lg 
             ${item.attributes.status === 'new' ? 'bg-green-500/15' : ''} 
             ${item.attributes.status === 'failed' ? 'bg-red-500/15' : ''} 
             ${
@@ -72,9 +79,10 @@ export default function Table() {
       role="region"
       aria-labelledby="OrdersTable01"
       tabIndex="0"
+      className="overflow-x-auto rounded-lg shadow"
     >
       {warnings}
-      <table className="w-full border-collapse">
+      <table className="w-full border-collapse ">
         <caption id="OrdersTable01">Trading data</caption>
         <thead className="bg-gray-50 border-b-2 border-gray-200">
           <tr>
@@ -128,7 +136,7 @@ export default function Table() {
             </th>
           </tr>
         </thead>
-        <tbody>{content}</tbody>
+        <tbody className="divide-y divide-gray-200">{content}</tbody>
       </table>
     </div>
   );
