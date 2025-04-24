@@ -29,6 +29,7 @@ export default function Home() {
         <li>Migrate to TypeScript</li>
         <li>Clicking reference number displays modal with bank info</li>
         <li>Deploy to github pages (webhooks)</li>
+        <li>Use loaders for pre-fetch?</li>
       </ul>
     </div>
   );
