@@ -1,23 +1,35 @@
+import './HomePage.module.css';
+
 export default function Home() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">How it was built</h1>
-      <p>So basically - from the README, there was 2 pages that needed to built</p>
-      <ul className="list-disc list-inside">
-        <li>this one - describing how I built this SPA</li>
-        <li>and a table with output data</li>
+    <div className="max-xl md:mx-auto">
+      <h1 className="text-3xl font-bold pb-1.5">How it was built</h1>
+      <p className="text-lg font-semibold ">
+        From the README, there were 2 pages that needed to built.
+      </p>
+      <ul>
+        <li>This one - describing how I built this SPA</li>
+        <li>And a table with output data (see Orders)</li>
       </ul>
-      <p>I went with:</p>
-      <ul className="list-disc list-inside">
+      <p className="text-lg font-semibold">I went with:</p>
+      <ul>
         <li>React and Vite</li>
         <li>
-          React Router DOM - to build out the content and error pages. Updated to v7
+          React Router - to build out the content and error pages. Updated to v7
         </li>
-        <li>React Query - it will grab the data (cache it, or refetch)</li>
+        <li>
+          React Query - it will grab the data (cache it, or refetch when you flip
+          between browser tabs or you can put a time to it)
+        </li>
         <li>Tailwind CSS - because Tailwind</li>
         <li>Responsive tables (block level), and ARIA approved!</li>
-        <li>Future - migrate to TypeScript</li>
       </ul>
-    </>
+      <p className="text-lg font-semibold">Future todo (no specific order):</p>
+      <ul>
+        <li>Migrate to TypeScript</li>
+        <li>Clicking reference number displays modal with bank info</li>
+        <li>Deploy to github pages (webhooks)</li>
+      </ul>
+    </div>
   );
 }

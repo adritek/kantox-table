@@ -1,14 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 import { getData } from '/src/utils/fetch.js';
 
-// import { currencyConverter } from '../utils/currencyConverter';
-
 export default function Table() {
+  const currencyConverter = (muney) => (muney / 100).toFixed(2);
+
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ['apiEvent'],
     queryFn: getData,
   });
-
   console.log(data);
 
   let content;
@@ -23,41 +22,75 @@ export default function Table() {
 
   if (data) {
     content = data.map((item) => (
-      <tr key={item.id} className="even:bg-gray-100 odd:bg-white">
-        <td data-cell="reference" className="p-3 text-sm text-gray-700">
+      <tr
+        key={item.id}
+        className="even:bg-gray-100 odd:bg-white grid grid-cols-[20ch auto] md:table-row gap-[0.1rem]"
+      >
+        <td
+          data-cell="reference: "
+          className="md:p-3 md:table-cell md:first:pt-4 md:before:content-none block first:pt-8 text-gray-700 before:content-[attr(data-cell)] before:font-bold px-2 py-0.5 pl-12 capitalize"
+        >
           <a href="#" className="font-bold text-blue-500 hover:underline">
             {item.attributes.reference}
           </a>
         </td>
-        <td data-cell="order type" className="p-3 text-sm text-gray-700 capitalize">
+        <td
+          data-cell="order type: "
+          className="md:p-3 md:table-cell block text-gray-700 before:content-[attr(data-cell)] before:font-bold md:before:content-none gap-2 px-2 py-0.5 pl-12 capitalize"
+        >
           {item.attributes['order-type']}
         </td>
-        <td data-cell="creation date" className="p-3 text-sm text-gray-700">
+        <td
+          data-cell="creation date: "
+          className="md:p-3 md:table-cell block text-gray-700 before:content-[attr(data-cell)] before:font-bold md:before:content-none gap-2 px-2 py-0.5 pl-12 capitalize"
+        >
           {item.attributes['creation-date']}
         </td>
         <td
-          data-cell="market direction"
-          className="p-3 text-sm text-gray-700 capitalize"
+          data-cell="market direction: "
+          className="md:p-3 md:table-cell block text-gray-700 before:content-[attr(data-cell)] before:font-bold md:before:content-none gap-2 px-2 py-0.5 pl-12 capitalize"
         >
           {item.attributes['market-direction']}
           {item.attributes['market-direction'] === 'buy' ? ' 📈' : ' 📉'}
         </td>
-        <td data-cell="buy" className="p-3 text-sm text-gray-700">
-          {item.attributes['market-direction'] === 'buy'
-            ? `${item.attributes['amount-cents']} ${item.attributes['buy-currency']}`
-            : `${item.attributes['buy-currency']}`}
+        <td
+          data-cell="buy: "
+          className="md:p-3 md:table-cell block text-gray-700 before:content-[attr(data-cell)] before:font-bold md:before:content-none gap-2 px-2 py-0.5 pl-12 capitalize"
+        >
+          {item.attributes['market-direction'] === 'buy' ? (
+            <>
+              {currencyConverter(item.attributes['amount-cents'])}{' '}
+              <strong>{item.attributes['buy-currency']}</strong>
+            </>
+          ) : (
+            item.attributes['buy-currency']
+          )}
         </td>
-        <td data-cell="sell" className="p-3 text-sm text-gray-700">
-          {item.attributes['market-direction'] !== 'buy'
-            ? `${item.attributes['amount-cents']} ${item.attributes['sell-currency']}`
-            : `${item.attributes['sell-currency']}`}
+        <td
+          data-cell="sell: "
+          className="md:p-3 md:table-cell block text-gray-700 before:content-[attr(data-cell)] before:font-bold md:before:content-none gap-2 px-2 py-0.5 pl-12 capitalize"
+        >
+          {item.attributes['market-direction'] !== 'buy' ? (
+            <>
+              {currencyConverter(item.attributes['amount-cents'])}{' '}
+              <strong>{item.attributes['sell-currency']}</strong>
+            </>
+          ) : (
+            item.attributes['sell-currency']
+          )}
         </td>
-        <td data-cell="value date" className="p-3 text-sm text-gray-700">
+        <td
+          data-cell="value date: "
+          className="md:p-3 md:table-cell block text-gray-700 before:content-[attr(data-cell)] before:font-bold md:before:content-none gap-2 px-2 py-0.5 pl-12 capitalize"
+        >
           {item.attributes['value-date']}
         </td>
-        <td data-cell="status">
+        <td
+          data-cell="status: "
+          className="md:p-3 md:table-cell last:pb-8 md:last:pb-4 block text-gray-700 before:content-[attr(data-cell)] before:font-bold md:before:content-none gap-2 px-2 py-0.5 pl-12 capitalize"
+        >
           <span
-            className={`p-1.5 text-xs font-medium uppercase tracking-wider text-yellow-800 rounded-lg 
+            className={`p-1.5 text-xs font-medium uppercase tracking-wider text-yellow-800 rounded-lg w-max
             ${item.attributes.status === 'new' ? 'bg-green-500/15' : ''} 
             ${item.attributes.status === 'failed' ? 'bg-red-500/15' : ''} 
             ${
@@ -79,57 +112,62 @@ export default function Table() {
       role="region"
       aria-labelledby="OrdersTable01"
       tabIndex="0"
-      className="overflow-x-auto rounded-lg shadow"
+      className="overflow-x-auto max-w-full border-gray-300 rounded-lg shadow-2xs outline-gray-400"
     >
       {warnings}
-      <table className="w-full border-collapse ">
-        <caption id="OrdersTable01">Trading data</caption>
+      <table className="w-full border-collapse m-0 border-0">
+        <caption
+          className="p-5 italic font-bold uppercase text-gray-700 tracking-wide caption-top md:text-right text-left mr-30"
+          id="OrdersTable01"
+        >
+          Trading data
+        </caption>
         <thead className="bg-gray-50 border-b-2 border-gray-200">
           <tr>
             <th
-              className="p-4 text-small font-semibold tracking-wide text-left"
+              className="hidden md:table-cell p-3 text-small font-semibold tracking-wide text-left"
               scope="col"
             >
               Reference
             </th>
             <th
-              className="p-4 text-small font-semibold tracking-wide text-left"
+              className="hidden md:table-cell p-3 text-small font-semibold tracking-wide text-left"
               scope="col"
             >
               Order Type
             </th>
             <th
-              className="p-4 text-small font-semibold tracking-wide text-left"
+              className="hidden md:table-cell p-3 text-small font-semibold tracking-wide text-left"
               scope="col"
             >
               Creation Date
             </th>
             <th
-              className="p-4 text-small font-semibold tracking-wide text-left"
+              className="hidden md:table-cell p-3 text-small font-semibold tracking-wide text-left"
               scope="col"
             >
               Market Direction
             </th>
             <th
-              className="p-4 text-small font-semibold tracking-wide text-left"
+              className="hidden md:table-cell p-3 text-small font-semibold tracking-wide text-left"
               scope="col"
             >
               Buy
             </th>
             <th
-              className="p-4 font-semibold text-small tracking-wide text-left"
+              className="hidden md:table-cell p-3 font-semibold text-small tracking-wide text-left"
               scope="col"
             >
               Sell
             </th>
             <th
-              className="p-4 text-small font-semibold tracking-wide text-left"
+              className="hidden md:table-cell p-3 text-small font-semibold tracking-wide text-left"
               scope="col"
             >
               Value Date
             </th>
             <th
-              className="p-4 text-small font-semibold tracking-wide text-left"
+              className="hidden md:table-cell p-3 text-small font-semibold tracking-wide text-left"
               scope="col"
             >
               Status
