@@ -1,6 +1,5 @@
 {
   "name": "kantox-table",
-  "homepage": "https://adritek.github.com/kantox-table",
   "private": true,
   "version": "0.0.0",
   "type": "module",
