@@ -1,12 +1,13 @@
-main ul {
+main div ul {
   list-style: none;
   display: inline-block;
   list-style-position: outside;
   text-align: left;
 }
-main ul li::before {
+main div ul li::before {
   content: '✓';
   color: green;
   padding-right: 0.5em;
 }
+
 /* it's just easier this way */
