@@ -1,5 +1,5 @@
 export async function getData() {
-  const response = await fetch("/src/assets/data.json");
+  const response = await fetch('../assets/data.json');
   if (!response.ok) {
     throw new Error("Couldn't fetch data");
   }
