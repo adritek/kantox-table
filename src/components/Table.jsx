@@ -8,7 +8,6 @@ export default function Table() {
     queryKey: ['apiEvent'],
     queryFn: getData,
   });
-  console.log(data);
 
   let content;
   let warnings;
@@ -17,7 +16,7 @@ export default function Table() {
     warnings = <p className="center">📊 Loading orders 📊</p>;
   }
   if (isError) {
-    warnings = { error }; //todo better errors
+    warnings = <p className="center text-red-600">Error: {error.message}</p>;
   }
 
   if (data) {
@@ -55,7 +54,7 @@ export default function Table() {
         </td>
         <td
           data-cell="buy: "
-          className="md:p-3 md:table-cell block text-gray-700 before:content-[attr(data-cell)] before:font-bold md:before:content-none gap-2 px-2 py-0.5 pl-12 capitalize"
+          className=" md:p-3 md:table-cell block text-gray-700 before:content-[attr(data-cell)] before:font-bold md:before:content-none gap-2 px-2 py-0.5 pl-12 capitalize"
         >
           {item.attributes['market-direction'] === 'buy' ? (
             <>
@@ -87,12 +86,12 @@ export default function Table() {
         </td>
         <td
           data-cell="status: "
-          className="md:p-3 md:table-cell last:pb-8 md:last:pb-4 block text-gray-700 before:content-[attr(data-cell)] before:font-bold md:before:content-none gap-2 px-2 py-0.5 pl-12 capitalize"
+          className=" md:p-3 md:table-cell last:pb-8 md:last:pb-4 block text-gray-700 before:content-[attr(data-cell)] before:font-bold md:before:content-none gap-2 px-2 py-0.5 pl-12 capitalize"
         >
           <span
-            className={`p-1.5 text-xs font-medium uppercase tracking-wider text-yellow-800 rounded-lg w-max
-            ${item.attributes.status === 'new' ? 'bg-green-500/15' : ''} 
-            ${item.attributes.status === 'failed' ? 'bg-red-500/15' : ''} 
+            className={`whitespace-normal p-1.5 text-xs font-medium uppercase tracking-wider text-yellow-800 rounded-lg w-max
+            ${item.attributes.status === 'new' ? 'bg-green-500/15 ' : ''} 
+            ${item.attributes.status === 'failed' ? 'bg-red-500/15 ' : ''} 
             ${
               item.attributes.status !== 'new' &&
               item.attributes.status !== 'failed'
@@ -100,7 +99,7 @@ export default function Table() {
                 : ''
             }`}
           >
-            {item.attributes.status}
+            {item.attributes.status.replace(/_/g, ' ')}
           </span>
         </td>
       </tr>
@@ -115,7 +114,7 @@ export default function Table() {
       className="overflow-x-auto max-w-full border-gray-300 rounded-lg shadow-2xs outline-gray-400"
     >
       {warnings}
-      <table className="w-full border-collapse m-0 border-0">
+      <table className="whitespace-nowrap w-full border-collapse m-0 border-0">
         <caption
           className="p-5 italic font-bold uppercase text-gray-700 tracking-wide caption-top md:text-right text-left mr-30"
           id="OrdersTable01"
@@ -125,13 +124,13 @@ export default function Table() {
         <thead className="bg-gray-50 border-b-2 border-gray-200">
           <tr>
             <th
-              className="hidden md:table-cell p-3 text-small font-semibold tracking-wide text-left"
+              className=" hidden md:table-cell p-3 text-small font-semibold tracking-wide text-left"
               scope="col"
             >
               Reference
             </th>
             <th
-              className="hidden md:table-cell p-3 text-small font-semibold tracking-wide text-left"
+              className="whitespace-normal hidden md:table-cell p-3 text-small font-semibold tracking-wide text-left"
               scope="col"
             >
               Order Type
@@ -143,7 +142,7 @@ export default function Table() {
               Creation Date
             </th>
             <th
-              className="hidden md:table-cell p-3 text-small font-semibold tracking-wide text-left"
+              className="whitespace-normal hidden md:table-cell p-3 text-small font-semibold tracking-wide text-left"
               scope="col"
             >
               Market Direction

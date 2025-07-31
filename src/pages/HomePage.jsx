@@ -2,8 +2,8 @@ import './HomePage.module.css';
 
 export default function Home() {
   return (
-    <div className="max-xl md:mx-auto">
-      <h1 className="text-3xl font-bold pb-1.5">How it was built</h1>
+    <div className="px-4 md:mx-auto">
+      <h1 className="text-3xl font-bold pb-1.5">How I built the Kantox tables</h1>
       <p className="text-lg font-semibold ">
         From the README, there were 2 pages that needed to built.
       </p>

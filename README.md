@@ -1,13 +1,8 @@
 # Kantox technical exercise
 
-Make 2 pages: 1st - how you made it, 2nd page - Given the mock returned data build a table
-
-## Special note for grading
-
-Hello and welcome - If you're looking for my submitted solution, please check [this branch](https://github.com/adritek/kantox-table/tree/got-to-here-test).
-
-I'm continuing on /main if you want to see how things turn out.  
-/main is pretty stable and feature branches will be merged into it via gitflow.
+Make 2 pages: 1st - how you made it, 2nd page - Given the mock returned data build a table.
+Generally I'm cutting branches, but everything gets rebased in to /main.
+/main is pretty stable and feature branches will be merged into it using gitflow methodologies.
 
 ## Getting Started
 

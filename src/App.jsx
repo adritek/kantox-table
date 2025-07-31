@@ -4,10 +4,13 @@ import MainNav from './components/MainNav';
 
 export default function App() {
   return (
-    <div id="container" className="flex flex-col h-screen">
+    <div
+      id="container"
+      className="min-h-screen w-full flex flex-col  m-auto max-w-5xl "
+    >
       <MainNav />
-      <main className="mb-auto px-10 py-5">{<Outlet />}</main>
-      <footer className="w-full bg-gray-500 text-gray-400">
+      <main className="py-5 flex-1">{<Outlet />}</main>
+      <footer className=" bg-gray-500 text-gray-400">
         <Link to="/error">Lil dude</Link>
       </footer>
     </div>

@@ -20,8 +20,8 @@ createRoot(document.getElementById('root')).render(
           <Route path="/" element={<App />}>
             <Route index element={<HomePage />} />
             <Route path="orders" element={<OrdersPage />} />
+            <Route path="*" element={<ErrorPage />} />
           </Route>
-          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </HashRouter>
     </QueryClientProvider>
