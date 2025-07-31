@@ -1,10 +1,15 @@
-main div ul {
+.myList {
+  margin-bottom: 0.1rem;
+}
+
+:global(main div ul) {
   list-style: none;
   display: inline-block;
   list-style-position: outside;
   text-align: left;
 }
-main div ul li::before {
+
+:global(main div ul li::before) {
   content: '✓';
   color: green;
   padding-right: 0.5em;

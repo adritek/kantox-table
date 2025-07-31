@@ -1,4 +1,4 @@
-import './HomePage.module.css';
+import classes from './HomePage.module.css';
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
         <li>And a table with output data (see Orders)</li>
       </ul>
       <p className="text-lg font-semibold">I went with:</p>
-      <ul>
+      <ul className={classes.myList}>
         <li>React and Vite</li>
         <li>
           React Router - to build out the content and error pages. Updated to v7
@@ -29,7 +29,7 @@ export default function Home() {
         <li>Migrate to TypeScript</li>
         <li>Clicking reference number displays modal with bank info</li>
         <li>Deploy to github pages (webhooks)</li>
-        <li>Use loaders for pre-fetch?</li>
+        <li>Use loaders for pre-fetch</li>
       </ul>
     </div>
   );
