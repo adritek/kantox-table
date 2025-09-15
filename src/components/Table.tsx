@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import { getData } from '/src/utils/fetch.js';
+import { getData } from '/src/utils/fetch';
 
 export default function Table() {
-  const currencyConverter = (muney) => (muney / 100).toFixed(2);
+  const currencyConverter = (muney: number) => (muney / 100).toFixed(2);
 
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ['apiEvent'],
