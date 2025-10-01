@@ -1,10 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
-import { getData } from '/src/utils/fetch';
+import { getData } from '@utils/fetch';
+import { type Order } from '@models/order';
 
 export default function Table() {
   const currencyConverter = (muney: number) => (muney / 100).toFixed(2);
 
-  const { data, isLoading, isError, error } = useQuery({
+  const { data, isLoading, isError, error } = useQuery<Order[]>({
     queryKey: ['apiEvent'],
     queryFn: getData,
   });
@@ -99,7 +100,7 @@ export default function Table() {
                 : ''
             }`}
           >
-            {item.attributes.status.replace(/_/g, ' ')}
+            {(item.attributes.status ?? '').replace(/_/g, ' ')}
           </span>
         </td>
       </tr>
@@ -110,7 +111,7 @@ export default function Table() {
       id="table-container"
       role="region"
       aria-labelledby="OrdersTable01"
-      tabIndex="0"
+      tabIndex={0}
       className="overflow-x-auto max-w-full border-gray-300 rounded-lg shadow-2xs outline-gray-400"
     >
       {warnings}

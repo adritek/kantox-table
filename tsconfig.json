@@ -9,11 +9,9 @@
     // See also https://aka.ms/tsconfig/module
     "module": "ESNext",
     "target": "esnext",
-    "types": [],
+    "types": ["node"],
     // For nodejs:
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    // "types": ["node"],
-    // and npm install -D @types/node
 
     // additional settings for typescript migration
     "allowJs": true,
@@ -29,7 +27,7 @@
     "exactOptionalPropertyTypes": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
     "ignoreDeprecations": "6.0",
     "resolveJsonModule": true,
     "noEmit": true,
@@ -49,7 +47,13 @@
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+
+    "baseUrl": "./",
+    "paths": {
+      "@utils/*": ["src/utils/*"],
+      "@models/*": ["src/types/*"]
+    }
   },
   "include": ["src"]
 }
